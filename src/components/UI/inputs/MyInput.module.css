@@ -1,0 +1,8 @@
+.myInput {
+  outline: none;
+  border: 1px solid #f52549;
+  border-radius: 10px;
+  padding: 5px 10px;
+  flex: 1 1 auto;
+  font-size: inherit;
+}

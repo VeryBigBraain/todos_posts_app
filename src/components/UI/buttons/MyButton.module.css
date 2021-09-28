@@ -1,0 +1,14 @@
+.myBtn {
+  border: 1px solid #f52549;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background: #fff;
+  transition: all 0.5s ease 0s;
+  margin-left: 5px;
+  min-width: 60px;
+}
+
+.myBtn:hover {
+  background: #f52549;
+  color: #fff;
+}
