@@ -3,10 +3,35 @@
   background: #f52549;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 15px;
 }
 
 .appLogo {
   font-size: 32px;
   color: #fff;
+}
+
+.navList {
+  display: flex;
+  text-decoration: none;
+}
+
+.navItem {
+  color: #fff;
+  font-size: 20px;
+  list-style-type: none;
+}
+
+.navItem:not(:last-child) {
+  padding-right: 15px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navLink:hover {
+  text-decoration: underline;
 }

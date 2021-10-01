@@ -8,7 +8,7 @@ const AddTodoForm = ({ createTodo }) => {
 
   const addTodo = () => {
     if (todoVal.trim() !== '') {
-      const newTodo = { id: Date.now(), content: todoVal, type: 'uncompleted' };
+      const newTodo = { id: Date.now(), title: todoVal, completed: false };
       createTodo(newTodo);
       setTodoVal('');
     }

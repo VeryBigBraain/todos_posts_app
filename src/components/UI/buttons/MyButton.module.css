@@ -4,8 +4,11 @@
   padding: 5px 10px;
   background: #fff;
   transition: all 0.5s ease 0s;
-  margin-left: 5px;
   min-width: 60px;
+}
+
+.myBtn:not(:first-child) {
+  margin-left: 5px;
 }
 
 .myBtn:hover {
