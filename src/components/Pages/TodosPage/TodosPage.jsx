@@ -1,65 +1,72 @@
 import AddTodoForm from './AddTodoForm/AddTodoForm';
 import FilterTodo from './FilterTodo/FilterTodo';
-import TodosList from './TodosList/TodosList.jsx';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import cl from './TodosPage.module.css';
-import { useTodos } from './../../../hooks/useTodos';
-import TodosService from './../../../API/TodosService';
-import Loader from './../../UI/Loader/Loader';
+import { useSortedTodos, useItemsList } from './../../../hooks/useItems';
+import ItemsList from './../../common/ItemsList/ItemsList';
+import TodoItem from './TodoItem/TodoItem';
+import { todoAPI } from './../../../API/serviceAPI';
 import { useFetching } from './../../../hooks/useFetching';
+import Loader from './../../UI/Loader/Loader';
 
-const TodosPage = () => {
-  const [todos, setTodos] = useState([]);
+const TodosPage = ({state}) => {
+  const [todos, setTodos] = state;
   const [searchVal, setSearchVal] = useState('');
-  const [selectVal, setSelectVal] = useState('all');
-  const searchedSortedTodos = useTodos(todos, selectVal, searchVal);
-  const [fetchTodos, isTodosLoading, todosError] = useFetching(async () => {
-    const todos = await TodosService.getAllTodos();
-    setTodos(todos);
-  });
+  const [sortVal, setSortVal] = useState('all');
+  const [userId, setUserId] = useState(1);
+  const [fetchCreate, isTodoCreateLoading] = useFetching(createTodo);
+  const searchedSortedTodos = useItemsList(
+    todos,
+    sortVal,
+    searchVal,
+    useSortedTodos
+  );
 
-  const createTodo = (newTodo) => {
+  async function createTodo(newTodo) {
+    await todoAPI.createTodo(newTodo);
     setTodos([...todos, newTodo]);
-  };
+  }
 
-  const deleteTodo = (id) => {
+  async function updateTodo(editingTodo, key) {
+    await todoAPI.updateTodo(editingTodo, key);
+    const editedTodos = [...todos];
+    const indexTodo = editedTodos.findIndex(
+      (todo) => todo.id === editingTodo.id
+    );
+    editedTodos.splice(indexTodo, 1, editingTodo);
+    setTodos(editedTodos);
+  }
+
+  async function deleteTodo(id) {
+    await todoAPI.deleteTodo(id);
     setTodos(todos.filter((todo) => todo.id !== id));
-  };
-  const toggleCompleteTodo = (id) => {
-    const todosToggle = [...todos];
-    todos.forEach((todo) => {
-      if (todo.id === id) {
-        todo.completed = !todo.completed;
-      }
-      return todo;
-    });
-    setTodos(todosToggle);
-  };
-
-  useEffect(() => {
-    fetchTodos();
-  }, []);
+  }
 
   return (
-    <div className={cl.todosPage}>
-      <h2 className={cl.formHeader}>Add new todo</h2>
-      <AddTodoForm createTodo={createTodo} />
-      <FilterTodo
-        setSelectVal={setSelectVal}
-        searchVal={searchVal}
-        setSearchVal={setSearchVal}
-        selectVal={selectVal}
-      />
-      {todosError && <h1>Some error</h1>}
-      {isTodosLoading ? (
-        <Loader />
-      ) : (
-        <TodosList
-          todos={searchedSortedTodos}
-          toggleCompleteTodo={toggleCompleteTodo}
-          deleteTodo={deleteTodo}
+    <div className={cl.todos__page}>
+      <div className={cl.todos__content}>
+        <h2 className={cl.form__header}>Add new todo</h2>
+        <AddTodoForm create={fetchCreate} userId={userId} isCreateLoading={isTodoCreateLoading} />
+        <FilterTodo
+          setSortVal={setSortVal}
+          searchVal={searchVal}
+          setSearchVal={setSearchVal}
+          sortVal={sortVal}
         />
-      )}
+        <span className={cl.todos__loader}>
+          {isTodoCreateLoading && <Loader width="50" height="30" />}
+        </span>
+        <div className={cl.todos__list}>
+          <ItemsList
+            items={searchedSortedTodos}
+            updateTodo={updateTodo}
+            deleteTodo={deleteTodo}
+            Component={TodoItem}
+            itemsName="todos"
+            isListLoading={isTodoCreateLoading}
+          />
+        </div>
+      </div>
     </div>
   );
 };

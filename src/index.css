@@ -9,7 +9,6 @@ body {
 
 body {
   box-sizing: border-box;
-  min-width: 100vw;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

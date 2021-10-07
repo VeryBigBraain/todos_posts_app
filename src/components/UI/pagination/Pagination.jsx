@@ -1,8 +1,8 @@
 import cl from './Pagination.module.css';
-import { getPagesArray } from '../../../utils/pages.js';
+import { usePagesArray } from './../../../hooks/usePagesArray';
 
 const Pagination = ({ totalPages, page, changePage }) => {
-  let pagesArray = getPagesArray(totalPages);
+  const pagesArray = usePagesArray(totalPages)
   return (
     <div>
       {pagesArray.map((p) => (

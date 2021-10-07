@@ -1,0 +1,41 @@
+.post {
+  border: 2px solid #f52549;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.post:not(:last-child) {
+  margin: 0px 0px 10px 0px;
+}
+
+.post__header {
+  font-weight: bold;
+  display: flex;
+}
+
+.post__header:not(:last-child) {
+  margin: 0px 0px 10px 0px;
+}
+
+.post__number:not(:last-child) {
+  margin: 0px 10px 0px 0px;
+}
+
+.post__body:not(:last-child) {
+  margin: 0px 0px 20px 0px;
+}
+
+.btn__container {
+  align-self: flex-end;
+}
+
+@media (max-width: 560px) {
+  .post {
+    padding: 20px 0px;
+    border-right: none;
+    border-left: none;
+    border-radius: 0px;
+  }
+}

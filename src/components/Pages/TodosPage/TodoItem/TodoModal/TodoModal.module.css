@@ -1,0 +1,12 @@
+.modalInputContainer:not(:last-child) {
+  margin: 0px 0px 20px;
+}
+
+.modalInput {
+  width: 100%;
+}
+
+.modalBtns {
+  display: flex;
+  justify-content: flex-end;
+}

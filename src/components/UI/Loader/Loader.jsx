@@ -1,8 +1,15 @@
 import cl from './Loader.module.css';
+import BibleLoader from "react-loader-spinner";
 
-const Loader = () => {
+const Loader = ({width = 100, height = 100}) => {
   return (
-    <div className={cl.loader}></div>
+    <BibleLoader
+        type="ThreeDots"
+        color="#f52549"
+        height={height}
+        width={width}
+        timeout={-1} //3 secs
+      />
   )
 }
 

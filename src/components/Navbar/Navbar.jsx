@@ -4,14 +4,18 @@ import { Link } from 'react-router-dom';
 function Navbar() {
   return (
     <header className={cl.header}>
-      <div className={cl.appLogo}>Todo</div>
+      <div className={cl.appLogo}>Todos</div>
       <nav className={cl.nav}>
-        <ul className={cl.navList}>
-          <li className={cl.navItem}>
-            <Link className={cl.navLink} to="/">Home</Link>
+        <ul className={cl.nav__list}>
+          <li className={cl.nav__item}>
+            <Link className={cl.nav__link} to="/">
+              Home
+            </Link>
           </li>
-          <li className={cl.navItem}>
-            <Link className={cl.navLink} to="/posts">News</Link>
+          <li className={cl.nav__item}>
+            <Link className={cl.nav__link} to="/posts">
+              Posts
+            </Link>
           </li>
         </ul>
       </nav>

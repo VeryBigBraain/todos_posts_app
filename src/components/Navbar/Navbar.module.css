@@ -1,37 +1,44 @@
 .header {
-  min-height: 50px;
   background: #f52549;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px;
+  padding: 20px 30px 20px 80px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
 }
 
 .appLogo {
-  font-size: 32px;
+  font-size: 24px;
   color: #fff;
+  font-weight: bold;
 }
 
-.navList {
+.nav__list {
   display: flex;
   text-decoration: none;
 }
 
-.navItem {
+.nav__item {
   color: #fff;
-  font-size: 20px;
+  font-size: 18px;
   list-style-type: none;
 }
 
-.navItem:not(:last-child) {
+.nav__item:not(:last-child) {
   padding-right: 15px;
 }
 
-.navLink {
+.nav__link {
   text-decoration: none;
   color: inherit;
 }
 
-.navLink:hover {
+.nav__link:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 920px) {
+  .header {
+    padding: 20px 30px;
+  }
 }

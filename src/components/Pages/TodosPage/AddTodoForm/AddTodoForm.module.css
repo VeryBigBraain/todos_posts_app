@@ -7,11 +7,25 @@
 }
 
 .form {
-  width: 60%;
-  padding: 10px 10px 30px;
+  width: 100%;
+  padding: 0px 10px 20px;
   display: flex;
+  align-items: flex-start;
+  min-height: 72px;
 }
 
-.formInput:not(:last-child) {
-  margin: 0px 0px 10px 0px;
+.btnContainer {
+  align-self: center;
 }
+
+@media (max-width: 620px) {
+  .form {
+    display: block;
+  }
+  .btnContainer:not(:first-child) {
+    margin-top: 10px;
+  }
+}
+
+
+

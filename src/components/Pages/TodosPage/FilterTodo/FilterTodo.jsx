@@ -1,22 +1,25 @@
 import cl from './FilterTodo.module.css';
-import MyInput from './../../../UI/inputs/MyInput';
 import MySelect from './../../../UI/select/MySelect';
+import TextField from '@material-ui/core/TextField';
 
 const FilterTodo = ({
-  todos,
-  setSelectVal,
-  selectVal,
+  setSortVal,
+  sortVal,
   searchVal,
   setSearchVal,
 }) => {
   return (
     <div className={cl.filterTodo}>
-      <MyInput
-        value={searchVal}
-        onChange={(e) => setSearchVal(e.target.value)}
-        name="search-input"
-        placeholder="Search..."
-      />
+        <TextField
+          label="Search"
+          variant="outlined"
+          value={searchVal}
+          onChange={(e) => setSearchVal(e.target.value)}
+          name="search-input"
+          placeholder="Todo..."
+          size="small"
+          className={cl.textfield}
+        />
       <MySelect
         defaultValue="Status of todo:"
         options={[
@@ -24,13 +27,10 @@ const FilterTodo = ({
           { value: 'completed', name: 'completed' },
           { value: 'uncompleted', name: 'uncompleted' },
         ]}
-        callback={setSelectVal}
+        callback={setSortVal}
         name="select"
-        value={selectVal}
+        value={sortVal}
       >
-        <option value="completed">Completed</option>
-        <option value="uncompleted">Uncompleted</option>
-        <option value="all">All</option>
       </MySelect>
     </div>
   );

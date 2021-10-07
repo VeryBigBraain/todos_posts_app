@@ -1,0 +1,37 @@
+.posts__page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.form__header {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0px 20px 0px;
+  border-bottom: 1px rgba(0, 0, 0, 0.342) solid;
+}
+
+.form__title {
+  font-size: 24px;
+}
+
+.filter__container {
+  display: flex;
+  justify-content: center;
+}
+
+.observer {
+  height: 1px;
+}
+
+.posts__container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  width: 80%;
+  padding: 30px 10px;
+}

@@ -1,9 +1,5 @@
-.mySelect {
-  outline: none;
-  border: 1px solid #f52549;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 0px 10px;
+.mySelect:not(:first-child) {
+  margin-left: 10px;
 }
 
 

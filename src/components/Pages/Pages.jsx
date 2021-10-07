@@ -1,12 +1,16 @@
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { routes } from './../../router/routes';
 
-function Pages() {
+function Pages({state}) {
   return (
     <Switch>
       {routes.map((route) => (
         <Route
-          component={route.component}
+          key={route.path}
+          render={() => {
+            const Component = route.component;
+            return <Component state={state} />
+            }}
           path={route.path}
           exact={route.exact}
         />
