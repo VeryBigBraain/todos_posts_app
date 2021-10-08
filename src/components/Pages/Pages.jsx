@@ -9,7 +9,7 @@ function Pages({state}) {
           key={route.path}
           render={() => {
             const Component = route.component;
-            return <Component state={state} />
+            return <Component />
             }}
           path={route.path}
           exact={route.exact}
