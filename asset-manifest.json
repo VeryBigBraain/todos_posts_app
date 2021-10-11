@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/todos_posts_app/static/css/main.486b8a33.chunk.css",
-    "main.js": "/todos_posts_app/static/js/main.9516663b.chunk.js",
-    "main.js.map": "/todos_posts_app/static/js/main.9516663b.chunk.js.map",
+    "main.css": "/todos_posts_app/static/css/main.3f2dbd32.chunk.css",
+    "main.js": "/todos_posts_app/static/js/main.a1e62b94.chunk.js",
+    "main.js.map": "/todos_posts_app/static/js/main.a1e62b94.chunk.js.map",
     "runtime-main.js": "/todos_posts_app/static/js/runtime-main.d77b1841.js",
     "runtime-main.js.map": "/todos_posts_app/static/js/runtime-main.d77b1841.js.map",
     "static/js/2.d9d06b43.chunk.js": "/todos_posts_app/static/js/2.d9d06b43.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.45ba0267.chunk.js": "/todos_posts_app/static/js/3.45ba0267.chunk.js",
     "static/js/3.45ba0267.chunk.js.map": "/todos_posts_app/static/js/3.45ba0267.chunk.js.map",
     "index.html": "/todos_posts_app/index.html",
-    "static/css/main.486b8a33.chunk.css.map": "/todos_posts_app/static/css/main.486b8a33.chunk.css.map",
+    "static/css/main.3f2dbd32.chunk.css.map": "/todos_posts_app/static/css/main.3f2dbd32.chunk.css.map",
     "static/js/2.d9d06b43.chunk.js.LICENSE.txt": "/todos_posts_app/static/js/2.d9d06b43.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d77b1841.js",
     "static/js/2.d9d06b43.chunk.js",
-    "static/css/main.486b8a33.chunk.css",
-    "static/js/main.9516663b.chunk.js"
+    "static/css/main.3f2dbd32.chunk.css",
+    "static/js/main.a1e62b94.chunk.js"
   ]
 }
