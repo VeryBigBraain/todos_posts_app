@@ -33,16 +33,20 @@ const TodoModal = React.forwardRef(
               />
             </div>
             <div className={cl.modalBtns}>
-              <MyButton
-                callback={saveEditTodo}
-                args={[{ ...todo, title: modalValue }, 'title']}
-                disabled={isLoading}
-              >
-                Save
-              </MyButton>
-              <MyButton callback={setActiveModal} args={[false]}>
-                Exit
-              </MyButton>
+              <div>
+                <MyButton
+                  callback={saveEditTodo}
+                  args={[{ ...todo, title: modalValue }, 'title']}
+                  disabled={isLoading}
+                >
+                  Save
+                </MyButton>
+              </div>
+              <div>
+                <MyButton callback={setActiveModal} args={[false]}>
+                  Exit
+                </MyButton>
+              </div>
             </div>
           </div>
         </MyModal>
