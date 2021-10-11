@@ -8,7 +8,6 @@ const PostsPage = ({
   sortVal,
   setSortVal,
   limit,
-  setLimit,
   postsError,
   isPostsLoading,
   sortedPosts,

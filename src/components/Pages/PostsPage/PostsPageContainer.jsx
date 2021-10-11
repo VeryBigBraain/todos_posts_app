@@ -1,38 +1,17 @@
-import { useEffect, useRef, useContext, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useFetching } from './../../../hooks/useFetching';
 import { getPagesCount } from '../../../utils/pages.js';
 import { useObserver } from './../../../hooks/useObserver';
 import { useSortedPosts } from './../../../hooks/useItems';
 import { itemsAPI } from './../../../API/serviceAPI';
-import { postContext } from './../../../context';
 import PostsPage from './PostsPage';
-import { 
-  setPostsAC, 
-  setSortValAC,
-  setTotalPagesAC,
-  setPageAC,
-} from './../../../reducers/post-reducer';
-import {
-  getPosts,
-  getSortVal,
-  getTotalPages,
-  getLimit,
-  getPage
-} from './../../../selectors/post-selector';
 
 const PostsPageContainer = () => {
-  const [state, dispatch] = useContext(postContext);
-
-  const posts = getPosts(state);
-  const sortVal = getSortVal(state);
-  const totalPages = getTotalPages(state);
-  const limit = getLimit(state);
-  const page = getPage(state);
-
-  const setPosts = (posts) => dispatch(setPostsAC(posts));
-  const setSortVal = (sortVal) => dispatch(setSortValAC(sortVal));
-  const setTotalPages = (totalCount) => dispatch(setTotalPagesAC(totalCount));
-  const setPage = (page) => dispatch(setPageAC(page));
+  const [posts, setPosts] = useState([]);
+  const [sortVal, setSortVal] = useState('id');
+  const [totalPages, setTotalPages] = useState(0);
+  const [limit, setLimit] = useState(10);
+  const [page, setPage] = useState(1);
 
   const sortedPosts = useSortedPosts(posts, sortVal);
   const lastElement = useRef();
@@ -52,7 +31,7 @@ const PostsPageContainer = () => {
 
   useEffect(() => {
     fetchPosts(limit, page);
-  }, [page, limit]);
+  }, [page]);
 
   return (
     <PostsPage

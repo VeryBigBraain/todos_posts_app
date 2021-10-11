@@ -4,6 +4,7 @@ import MySelect from './../../../UI/select/MySelect';
 const FilterPosts = ({
   sortVal,
   setSortVal,
+  limit,
 }) => {
   return (
     <div className={cl.filter__post}>
