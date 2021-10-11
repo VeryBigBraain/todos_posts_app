@@ -15,7 +15,7 @@ function Pages({state}) {
           exact={route.exact}
         />
       ))}
-      <Redirect to="/nopage" />
+      <Redirect to="/"/>
     </Switch>
   );
 }
