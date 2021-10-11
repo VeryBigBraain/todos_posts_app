@@ -44,7 +44,7 @@ const TodosPageContainer = () => {
 
   async function deleteTodo(id) {
     await todoAPI.deleteTodo(id);
-    dispatch(setTodos(todos.filter((todo) => todo.id !== id)));
+    setTodos(todos.filter((todo) => todo.id !== id));
   }
 
   return (

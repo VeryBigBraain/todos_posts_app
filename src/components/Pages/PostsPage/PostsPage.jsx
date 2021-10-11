@@ -7,8 +7,8 @@ import FilterPosts from './FilterPosts/FilterPosts';
 const PostsPage = ({
   sortVal,
   setSortVal,
-  postsPortion,
-  onPostsPortionChange,
+  limit,
+  setLimit,
   postsError,
   isPostsLoading,
   sortedPosts,
@@ -23,8 +23,7 @@ const PostsPage = ({
           <FilterPosts
             sortVal={sortVal}
             setSortVal={setSortVal}
-            postsPortion={postsPortion}
-            setPostsPortion={onPostsPortionChange}
+            limit={limit}
           />
         </div>
       </div>

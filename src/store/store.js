@@ -8,9 +8,8 @@ export const store = {
   postState: {
     posts: [],
     sortVal: 'id',
-    postsPortion: '5',
     totalPages: 0,
-    limit: 2,
+    limit: 10,
     page: 1,
   }
 }
