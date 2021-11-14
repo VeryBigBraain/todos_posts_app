@@ -6,7 +6,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import { todoReducer } from './reducers/todo-reducer';
 import { store } from './store/store';
-import { todoContext, postContext } from './context';
+import { todoContext } from './context';
 
 const theme = createTheme({
   palette: {

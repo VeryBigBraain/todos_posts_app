@@ -22,7 +22,7 @@ const TodoItem = ({ item, index, deleteTodo, updateTodo}) => {
   }
 
   useEffect(() => {
-    return () => inputRef = null;
+    return () => inputRef.current = null;
   }
   , []);
 
