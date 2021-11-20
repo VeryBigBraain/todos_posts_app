@@ -41,7 +41,7 @@ const PostPage = () => {
         )}
         <h2 className={cl.comments__header}>Comments</h2>
         <CommentsList comments={comments} isComLoading={isComLoading} />
-        <MyButton onClick={() => router.goBack()} variant="contained">
+        <MyButton onClick={() => router.goBack()} variant="contained" customStyle={{color: '#fff'}}>
           Back
         </MyButton>
       </div>

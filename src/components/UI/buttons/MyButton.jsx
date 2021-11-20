@@ -4,7 +4,9 @@ import Button from '@material-ui/core/Button';
 const MyButton = ({
   children,
   callback,
+  customStyle = {},
   color = 'primary',
+  fontSize = 'small',
   size = 'small',
   variant = 'outlined',
   args = [],
@@ -26,6 +28,7 @@ const MyButton = ({
       color={color}
       size={size}
       fullWidth
+      sx={customStyle}
     >
       {children}
     </Button>

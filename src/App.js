@@ -11,9 +11,12 @@ import { todoContext } from './context';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#f52549',
+      main: '#fe6323',
     },
-  },
+    warning: {
+      main: '#dc3545',
+    },
+  }
 });
 
 function App() {

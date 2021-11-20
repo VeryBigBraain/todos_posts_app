@@ -1,27 +1,28 @@
 .comments__container {
-  display: flex;
-  flex-direction: column;
-  padding: 0px 0px 30px 0px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px 30px 0px;
 }
 
 .comment {
-  padding: 10px 0px 10px 0px;
-  border-bottom: 1px #f5254865 solid;
+    padding: 10px 0px 10px 0px;
+    border-bottom: 1px #fe65238a solid;
 }
 
 .comment:last-child {
-  padding: 10px 0px 0px 0px;
-  border: none;
+    padding: 10px 0px 0px 0px;
+    border: none;
 }
 
 .comment:first-child {
-  padding: 0px 0px 10px 0px;
+    padding: 0px 0px 10px 0px;
 }
 
-.comment > *:not(:last-child) {
-  margin: 0px 0px 5px 0px;
+.comment>*:not(:last-child) {
+    margin: 0px 0px 5px 0px;
 }
 
 .comment__body {
-  text-align: justify;
+    text-align: justify;
+    text-indent: 1.5em;
 }
